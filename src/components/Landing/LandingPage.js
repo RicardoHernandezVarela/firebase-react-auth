@@ -1,10 +1,19 @@
 import React from 'react';
+import { FirebaseContext } from '../Firebase';
 
 const LandingPage = () => {
     return (
-        <div>
-            <h6>Landing...</h6>
-        </div>
+        <FirebaseContext.Consumer>
+            {firebase => {
+                console.log(firebase);
+                return (
+                    <div>
+                        <h6>Firebase was initialized</h6>
+                    </div>
+                )
+            }}
+        </FirebaseContext.Consumer>
+
     );
 }
 
