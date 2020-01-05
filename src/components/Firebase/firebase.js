@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 
 /* Import Firebase keys */
-import * as KEYS from '../../constants/firebaseConfig';
+import * as KEYS from '../../keys/firebaseConfig';
 
 const config = {
     apiKey: KEYS.apiKey,
