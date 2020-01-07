@@ -17,6 +17,8 @@ import LandingPage from '../Landing/LandingPage';
 import SignUp from '../SignUp/SignUp';
 import Home from '../Home/Home';
 import SignIn from '../SignIn/SignIn';
+import PasswordForget from '../PasswordForget/PasswordForget';
+import Account from '../Account/Account';
 
 class App extends Component {
     constructor(props) {
@@ -56,6 +58,8 @@ class App extends Component {
                     <Route exact path={ROUTES.SIGN_UP} component={SignUp} />
                     <Route exact path={ROUTES.HOME} component={Home} />
                     <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
+                    <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
+                    <Route exact path={ROUTES.ACCOUNT} component={Account} />
                 </Switch>
             </Router>
         );

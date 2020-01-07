@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
 /* Import components */
-import SignOutButton from '../SignOut/SignOut';
+import SignOut from '../SignOut/SignOut';
 
 const Navigation = ({ authUser }) => {
     return (
@@ -28,7 +28,7 @@ const NavigationAuth = () => {
                 <Link to={ROUTES.ACCOUNT}>Account</Link>
             </li>
             <li>
-                <SignOutButton />
+                <SignOut />
             </li>
         </ul>
     );

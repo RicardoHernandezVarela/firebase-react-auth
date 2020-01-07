@@ -9,12 +9,14 @@ import * as ROUTES from '../../constants/routes';
 
 /* Import components */
 import { SignUpLink } from '../SignUp/SignUp';
+import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 
 const SignInPage = () => {
     return (
         <div>
             <h1>Sign In</h1>
             <SignInForm />
+            <PasswordForgetLink />
             <SignUpLink />
         </div>
     );
