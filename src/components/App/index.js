@@ -13,6 +13,7 @@ import Navigation from '../Navigation/Navigation'
 import LandingPage from '../Landing/LandingPage';
 import SignUp from '../SignUp/SignUp';
 import Home from '../Home/Home';
+import SignIn from '../SignIn/SignIn';
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Route exact path={ROUTES.LANDING} component={LandingPage}/>
                 <Route exact path={ROUTES.SIGN_UP} component={SignUp} />
                 <Route exact path={ROUTES.HOME} component={Home} />
+                <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
             </Switch>
         </Router>
     );
