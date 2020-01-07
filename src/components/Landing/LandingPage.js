@@ -5,7 +5,6 @@ const LandingPage = () => {
     return (
         <FirebaseContext.Consumer>
             {firebase => {
-                console.log(firebase);
                 return (
                     <div>
                         <h6>Firebase was initialized</h6>
