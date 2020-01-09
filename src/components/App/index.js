@@ -15,7 +15,7 @@ import { withFirebase } from '../Firebase/index';
 import Navigation from '../Navigation/Navigation'
 import LandingPage from '../Landing/LandingPage';
 import SignUp from '../SignUp/SignUp';
-import Home from '../Home/Home';
+import HomePage from '../Home/Home';
 import SignIn from '../SignIn/SignIn';
 import PasswordForget from '../PasswordForget/PasswordForget';
 import Account from '../Account/Account';
@@ -56,10 +56,10 @@ class App extends Component {
                 <Switch>
                     <Route exact path={ROUTES.LANDING} component={LandingPage}/>
                     <Route exact path={ROUTES.SIGN_UP} component={SignUp} />
-                    <Route exact path={ROUTES.HOME} component={Home} />
+                    <Route exact path={ROUTES.HOME} component={HomePage} />
                     <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
                     <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
-                    <Route exact path={ROUTES.ACCOUNT} component={Account} />
+                    <Route exact path={ROUTES.ACCOUNT} render={() => <Account authUser={this.state.authUser} />} />
                 </Switch>
             </Router>
         );
