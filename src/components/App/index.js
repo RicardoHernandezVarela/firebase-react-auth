@@ -19,6 +19,7 @@ import HomePage from '../Home/Home';
 import SignIn from '../SignIn/SignIn';
 import PasswordForget from '../PasswordForget/PasswordForget';
 import Account from '../Account/Account';
+import AdminPage from '../Admin/Admin';
 
 class App extends Component {
     constructor(props) {
@@ -60,6 +61,7 @@ class App extends Component {
                     <Route exact path={ROUTES.SIGN_IN} component={SignIn} />
                     <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
                     <Route exact path={ROUTES.ACCOUNT} render={() => <Account authUser={this.state.authUser} />} />
+                    <Route exact path={ROUTES.ADMIN} component={AdminPage} />
                 </Switch>
             </Router>
         );

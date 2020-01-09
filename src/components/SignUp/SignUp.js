@@ -43,8 +43,8 @@ class SignUpFormBase extends Component {
             .then(authUser => {
                 /* Create user in firestore real-time database */
 
-                return this.props.firebase
-                    .user(authUser.user.id) /* Create or get the user in real-time db */
+                this.props.firebase
+                    .user(authUser.user.uid) /* Create or get the user in real-time db */
                     .set({ /* Assign user info */
                         username,
                         email,

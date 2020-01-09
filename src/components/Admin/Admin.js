@@ -19,16 +19,19 @@ class AdminPage extends Component {
         this.props.firebase.users().on('value', snapshot => {
             const usersObject = snapshot.val();
             console.log(usersObject);
-            const usersList = Object.keys(usersObject).map(key => ({
-                ...usersObject[key],
-                uid: key,
-            }));
-
-            this.setState({
-                users: usersList,
-                loading: false,
-            });
+            if (usersObject !== null) {
+                const usersList = Object.keys(usersObject).map(key => ({
+                    ...usersObject[key],
+                    uid: key,
+                }));
+    
+                this.setState({
+                    users: usersList,
+                    loading: false,
+                }, () => console.log(this.state.users));
+            }
         });
+        
     }
 
     componentWillUnmount() {
@@ -37,12 +40,14 @@ class AdminPage extends Component {
 
     render() {
         const { users, loading } = this.state;
+        const totalUsers = Object.entries(users).length;
+        const usersExist = totalUsers !== 0
 
         return (
             <div>
                 <h1>Admin</h1>
                 {loading && <div>Loading...</div>}
-                <UserList users={users} />
+                {usersExist && <UserList users={users} />} 
             </div>
         )
     }
@@ -51,11 +56,12 @@ class AdminPage extends Component {
 const UserList = ({ users }) => {
     return (
         <ul>
-            { users.map(user => {
+            {users.map(user => {
+                //console.log(user)
                 return (
-                    <li>
+                    <li key={user.uid}>
                         <span>
-                            <strong>ID:</strong> {user.ig}
+                            <strong>ID:</strong> {user.uid}
                         </span>
                         <span>
                             <strong>E-Mail:</strong> {user.email}
