@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 /* Import Firebase keys */
 import * as KEYS from '../../keys/firebaseConfig';
@@ -19,6 +20,7 @@ class Firebase {
         app.initializeApp(config);
 
         this.auth = app.auth();
+        this.db = app.database();
     }
 
     /* Auth API */
@@ -40,6 +42,14 @@ class Firebase {
     /* Update password of current user */
     doPasswordUpdate = password => 
         this.auth.currentUser.updatePassword(password);
+
+    /* User API */
+
+    /* Get specific user */
+    user = uid => this.db.ref(`users/${uid}`);
+
+    /* Get all users */
+    users = () => this.db.ref('users');
     
 }
 
